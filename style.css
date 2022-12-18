@@ -661,4 +661,14 @@ footer span a:hover{
         font-size: 23px;
         line-height: 38px;
     }
+    .home{
+        display: flex;
+        background: url("images/bannertall.png") no-repeat center;
+        height: 100vh;
+        color: #fff;
+        min-height: 500px;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
