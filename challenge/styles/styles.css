@@ -1,0 +1,50 @@
+body {
+  background-color: rgb(238, 188, 244);
+}
+a {
+  color: white;
+  margin: 40px;
+}
+a:hover {
+  background-color: white;
+  color: steelblue;
+}
+h1 {
+  color: black;
+}
+img {
+  width: 90%;
+  border: 4px solid black;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+p {
+  width: 90%;
+  padding: 10px;
+  text-shadow: 0cm;
+}
+footer {
+  background-color: rgb(173, 29, 29);
+  color: White;
+  font-size: 20px;
+  margin: 20px auto;
+}
+.main-para {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+#active {
+  background-color: rgb(214, 236, 252);
+  color: rgb(26, 4, 176);
+}
+h1 {
+  text-align: center;
+  color: white;
+  text-size: 2em;
+}
+main p {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}

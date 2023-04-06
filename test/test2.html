@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>My Web Developer Portfolio</title>
+    
+    <!-- Add a link to the style sheet -->
+    <link rel="stylesheet" type="text/css" href="test.css">
+    
+    <!-- Add a link to the mouse trail script -->
+    <script src="mouse-trail.js"></script>
+  </head>
+  <body>
+    <!-- Create a container element for the mouse trail -->
+    <div id="mouse-trail"></div>
+    
+    <!-- Add a header element for the page title -->
+    <h1>My Web Developer Portfolio</h1>
+    
+    <!-- Add an image element for the profile picture -->
+    <img src="profile-pic.jpg" alt="My profile picture">
+    
+    <!-- Add a paragraph element for the bio -->
+    <p>
+      Hi, my name is John Doe and I am a web developer with 5 years of experience. I specialize in building responsive, user-friendly websites and web applications using technologies like HTML, CSS, and JavaScript.
+    </p>
+    
+    <!-- Add a section element for the portfolio items -->
+    <section>
+      <h2>My Work</h2>
+      
+      <!-- Add a div element for each portfolio item -->
+      <div class="portfolio-item">
+        <img src="project-1.jpg" alt="Screenshot of project 1">
+        <h3>Project 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+        </p>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="project-2.jpg" alt="Screenshot of project 2">
+        <h3>Project 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.
+        </p>
+      </div>
+      
+      <!-- Add additional portfolio items here -->
+    </section>
+    
+    <!-- Add a section element for the contact form -->
+    <section>
+      <h2>Contact Me</h2>
+      
+      <!-- Add a form element for the contact form -->
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br>
+        <input type="submit" value="Send">
+      </form> 
+    </section>
+    
+    <!-- Add a script element to implement the mouse trail -->
+    <script>
+          // Get the mouse trail container element
+          var mouseTrail = document.getElementById('mouse-trail');
+
+          // Create an array of colors for the mouse trail
+          var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+
+          // Set the interval for creating new mouse trail elements
+          var interval = 25;
+
+          // Set the initial position of the mouse
+          var x = 0;
+          var y = 0;
+
+          // Set the maximum number of mouse trail elements
+          var maxElements = 100;
+
+          // Create an array to store the mouse trail elements
+          var elements = [];
+
+          // Add an event listener to the document to track the mouse position
+          document.addEventListener('mousemove', function(event) {
+            // Update the mouse position
+            x = event.clientX;
+            y = event.clientY;
+          });
+
+          // Create a function to create a new mouse trail element
+          function createMouseTrail() {
+            // Create a new div element for the mouse trail
+            var trail = document.createElement('div');
+            
+            // Set the position of the mouse trail to be offset from the mouse position
+            trail.style.position = 'absolute';
+            trail.style.left = (x - 20) + 'px';
+            trail.style.top = (y - 20) + 'px';
+            
+            // Set the size and color of the mouse trail
+            trail.style.width = '2px';
+            trail.style.height = '2px';
+            trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Add the mouse trail to the mouse trail container
+            mouseTrail.appendChild(trail);
+            
+            // Add the mouse trail element to the array
+            elements.push(trail);
+            
+            // If the number of mouse trail elements exceeds the maximum, remove the oldest element
+            if (elements.length > maxElements) {
+              mouseTrail.removeChild(elements.shift());
+            }
+          }
+
+          // Set an interval to create new mouse trail elements at the specified interval
+          setInterval(createMouseTrail, interval);
+      </script>
