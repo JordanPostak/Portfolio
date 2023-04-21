@@ -6,6 +6,28 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+.carousel.owl-carousel {
+    position: relative;
+    z-index: 10001;
+}
+a.hire-me {
+    position: relative;
+    z-index: 10001;
+}
+.about a {
+    position: relative;
+    z-index: 10001;
+}
+.card {
+    position: relative;
+    z-index: 10001;
+  }
+
+.skills a {
+    position: relative;
+    z-index: 10001;
+  }
+
 html{
     scroll-behavior: smooth;
 }
@@ -76,7 +98,7 @@ section .title::after{
 .navbar{
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 10002;
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
@@ -113,6 +135,8 @@ section .title::after{
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
+    position: relative;
+  z-index: 9999;
 }
 .navbar .menu li a:hover{
     color: maroon;
@@ -126,6 +150,7 @@ section .title::after{
     font-size: 23px;
     cursor: pointer;
     display: none;
+    z-index: 1;
 }
 .scroll-up-btn{
     position: fixed;
@@ -507,6 +532,7 @@ section .title::after{
   align-items: center;
 }
 .right form .button-area button{
+  z-index: 9999;
   color: #fff;
   display: block;
   width: 160px!important;

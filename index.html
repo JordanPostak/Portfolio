@@ -11,14 +11,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="snake.css">
     </head>
-    <body>
+    <body onload="init();"> 
+        <audio id="goodFoodSound" src="audio/collectcoin.mp3" hidden></audio>
+        <audio id="badFoodSound" src="audio/aww.mp3" hidden></audio>
         <div class="scroll-up-btn">
             <i class="fas fa-angle-up"></i>
         </div>
         <nav class="navbar">
             <div class="max-width">
                 <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+                <h2 class="score">Score: <span id="score">0</span></h2>
                 <ul class="menu">
                     <li><a href="#home" class="menu-btn">Home</a></li>
                     <li><a href="#about" class="menu-btn">About</a></li>
@@ -33,13 +37,14 @@
             </div>
         </nav>
         <!-- home section start -->
+        <canvas width=400 height=400 id=myCanvas></canvas>
         <section class="home" id="home">
             <div class="max-width">
                 <div class="home-content">
                     <div class="text-1">Hello, my name is</div>
                     <div class="text-2">Jordan Postak</div>
                     <div class="text-3">I am a <span class="typing"></span></div>
-                    <a href="#">Hire me</a>
+                    <a href="#" class="hire-me">Hire me</a>
                 </div>
             </div>
         </section>
@@ -237,5 +242,6 @@
             <span>Created By <a href="#about">Jordan Postak</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
         </footer>
         <script src="script.js"></script>
+        <script src="snake.js"></script>
     </body>
 </html>

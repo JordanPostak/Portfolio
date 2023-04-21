@@ -1,0 +1,22 @@
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1); /* adjust scale factor */
+    transform-origin: 0 0; /* keep top-left corner in place */
+    z-index: 9998;
+    margin-top: 90px;
+  }
+  .score{
+    position:absolute;
+    left:450px;
+    margin-top:0px;
+    color: maroon;
+  }
+  #score{
+    padding: 4px 10px;
+    border: 2px maroon dotted;
+    background: rgb(255, 255, 255);
+  }
