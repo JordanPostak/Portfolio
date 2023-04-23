@@ -13,11 +13,22 @@ var x = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
 var y = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
 var mousePos;
 
+var badFoodDuration = 10; // duration in seconds for bad food to disappear
+var badFoodTimer = []; // array to hold timer for each bad food
+
 var canvas = document.getElementById("myCanvas");
 resizeCanvas();
 
 window.addEventListener('resize', function(event){
     resizeCanvas();
+});
+
+const playSnakeGameBtn = document.querySelector('.play-snake-game-btn');
+const snakeGamePanel = document.querySelector('.snake-game-panel');
+
+playSnakeGameBtn.addEventListener('click', () => {
+  snakeGamePanel.style.display = 'block';
+  init();
 });
 
 function resizeCanvas() {
@@ -28,17 +39,22 @@ function resizeCanvas() {
 var fx = 10+Math.random() * (canvas.width-20);  
 var fy = 10+Math.random() * (canvas.height-20);
 
+var addFoodBtn = document.getElementById("add-food-btn");
+addFoodBtn.addEventListener("click", function() {
+  foods.push(generateFood());
+});
+
 function init() {
    ctx = canvas.getContext('2d');
+   
   canvas.addEventListener('mousemove', function (evt) {
     mousePos = getMousePos(canvas, evt);
   }, false);
 
-    // Generate initial food positions
-  for (var i = 0; i < 5; i++) {
-    foods.push(generateFood());
- }
-  
+  // Display high score
+var highScore = getHighScore();
+document.getElementById("high-score").innerHTML = highScore;
+
   // starts animation
   requestAnimationFrame(animate);
 }
@@ -53,7 +69,6 @@ function generateFood() {
   }
 
 function getMousePos(canvas, evt) {
-   // necessary to take into account CSS boundaries
    var rect = canvas.getBoundingClientRect();
       p = ctx.getImageData(evt.clientX - rect.left, evt.clientY - rect.top, 1, 1).data;
    return {
@@ -63,55 +78,74 @@ function getMousePos(canvas, evt) {
 }
 
 function animate() {
-    if (a == 0) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      foodRandom();
-      // draw the snake, only when the mouse entered at
-      if (mousePos !== undefined) {
-        // If snake eats food then change length & update food
-        for (var i = 0; i < foods.length; i++) {
-          if (
-            mousePos.x > foods[i].x - 1 &&
-            mousePos.x < foods[i].x + 13 &&
-            mousePos.y > foods[i].y - 1 &&
-            mousePos.y < foods[i].y + 13
-          ) {
-            if (foods[i].isBad) {
-              // Reset the snake if bad food is eaten
-              n = 3;
-              x = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
-              y = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
-              score = 0;
-              document.getElementById("score").innerHTML = score;
-              document.getElementById("badFoodSound").play();
-            } else {
-              // Increase length if good food is eaten
-              n++;
-              score++;
-              document.getElementById("score").innerHTML = score;
-              changes(n);
-              document.getElementById("goodFoodSound").play();
-            }
-            // Generate new position for the eaten food
-            foods[i] = generateFood();
+  if (a == 0) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    foodRandom();
+    // draw the snake, only when the mouse entered at
+    if (mousePos !== undefined) {
+      // If snake eats food then change length & update food
+      for (var i = 0; i < foods.length; i++) {
+        if (
+          mousePos.x > foods[i].x - 1 &&
+          mousePos.x < foods[i].x + 13 &&
+          mousePos.y > foods[i].y - 1 &&
+          mousePos.y < foods[i].y + 13
+        ) {
+          if (foods[i].isBad) {
+            // Reset the snake if bad food is eaten
+            n = 3;
+            x = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
+            y = Array.apply(null, Array(n)).map(Number.prototype.valueOf,0);
+            score = 0;
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("badFoodSound").play();
+          } else {
+            // Increase length if good food is eaten
+            n++;
+            score++;
+            document.getElementById("score").innerHTML = score;
+            changes(n);
+            document.getElementById("goodFoodSound").play();
           }
-          // Draw the food on the canvas
-            ctx.fillStyle = foods[i].isBad ? "red" : "green";
-            ctx.beginPath();
-            ctx.arc(foods[i].x + 6, foods[i].y + 5, 5, 0, Math.PI * 2);
-            ctx.fill();
+          // Update high score if current score is higher
+          if (score > getHighScore()) {
+            localStorage.setItem("high-score", score);
+          }
+          // Generate new position for the eaten food
+          foods[i] = generateFood();
         }
-        drawSnake(mousePos.x, mousePos.y);
+        // Draw the food on the canvas
+          ctx.fillStyle = foods[i].isBad ? "red" : "green";
+          ctx.beginPath();
+          ctx.arc(foods[i].x + 6, foods[i].y + 5, 5, 0, Math.PI * 2);
+          ctx.fill();
       }
-      requestAnimationFrame(animate);
+      // Display high score
+      var highScore = getHighScore();
+      document.getElementById("high-score").innerHTML = highScore;
+      drawSnake(mousePos.x, mousePos.y);
     }
+    requestAnimationFrame(animate);
   }
+}
+
+function updateHighScore(score) {
+  if (score > getHighScore()) {
+    localStorage.setItem("high-score", score);
+  }
+}
+
+function getHighScore() {
+  var highScore = localStorage.getItem("high-score");
+  return highScore ? parseInt(highScore) : 0;
+}
 
 function drawSnake(posX, posY) {
   //game over condition with color & border comparison. Head touching any color with 'b'(b of rgb) value 0f 255 is considered as terminating condition.
       if(p[2]==255||posX>canvas.width-2||posY>canvas.height-2)
       {
         // Restart game
+        updateHighScore(score);
         return;
       }  
       dragSegment(0, posX, posY);
@@ -191,6 +225,19 @@ function foodRandom() {
         ctx.beginPath();
         ctx.arc(foods[i].x + 6, foods[i].y + 5, 10, 0, Math.PI * 2, true);
         ctx.fill();
+    }
+  }
+
+  function changeBadFoodToGood() {
+    // Iterate over all foods
+    for (var i = 0; i < foods.length; i++) {
+      // Check if the current food is bad
+      if (foods[i].isBad) {
+        // Set a timeout to change the food to good after 10 seconds
+        setTimeout(function() {
+          foods[i].isBad = false;
+        }, 10000);
+      }
     }
   }
 

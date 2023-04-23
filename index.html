@@ -13,16 +13,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
         <link rel="stylesheet" href="snake.css">
     </head>
-    <body onload="init();"> 
+    <body> 
         <audio id="goodFoodSound" src="audio/collectcoin.mp3" hidden></audio>
-        <audio id="badFoodSound" src="audio/aww.mp3" hidden></audio>
+        <audio id="badFoodSound" src="audio/negative.mp3" hidden></audio>
         <div class="scroll-up-btn">
             <i class="fas fa-angle-up"></i>
         </div>
         <nav class="navbar">
             <div class="max-width">
                 <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
-                <h2 class="score">Score: <span id="score">0</span></h2>
+                <button class="play-snake-game-btn">Play Snake Game</button>
                 <ul class="menu">
                     <li><a href="#home" class="menu-btn">Home</a></li>
                     <li><a href="#about" class="menu-btn">About</a></li>
@@ -38,6 +38,15 @@
         </nav>
         <!-- home section start -->
         <canvas width=400 height=400 id=myCanvas></canvas>
+        <div class="snake-game-panel">
+            <div class="game-feild">
+                <h2 class="score">Score: <span id="score">0</span></h2>
+                <button id="add-food-btn">Add Food</button>
+            </div>
+            <div class="high-score-feild">
+                <h2 class="high-score">High Score: <span id="high-score">0</span></h2>
+            </div>
+        </div>
         <section class="home" id="home">
             <div class="max-width">
                 <div class="home-content">
