@@ -31,15 +31,15 @@ $(document).ready(function(){
     });
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Programer", "Developer", "Artist", "Designer", "Freelancer"],
-        typeSpeed: 100,
-        backSpeed: 60,
+        strings: ["Full-Stack Web Developer", "Creative Web Designer", "Ready-to-hire Freelancer"],
+        typeSpeed: 30,
+        backSpeed: 20,
         loop: true
     });
     var typed = new Typed(".typing-2", {
-        strings: ["Programer", "Developer", "Artist", "Designer", "Freelancer"],
-        typeSpeed: 100,
-        backSpeed: 60,
+        strings: ["Full-Stack Web Developer", "Creative Web Designer", "Ready-to-hire Freelancer"],
+        typeSpeed: 30,
+        backSpeed: 20,
         loop: true
     });
     // owl carousel script
