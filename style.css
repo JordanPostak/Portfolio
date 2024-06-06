@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #1a45b2;
+    --secondary-color: #f1f1f1;
+    --nuetral-color: #888;
+    --secondary-nuetral-color: #555;
+    --simple-dark: #111;
+    --simple-light: #fff;
+
+}
+
+
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 *{
@@ -36,13 +47,13 @@ html{
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--secondary-color);
 }
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--nuetral-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--secondary-nuetral-color);
 }
 /* all similar content styling codes */
 section{
@@ -81,7 +92,7 @@ section .title::before{
     left: 50%;
     width: 180px;
     height: 3px;
-    background: #111;
+    background: var(--simple-dark);
     transform: translateX(-50%);
 }
 section .title::after{
@@ -89,9 +100,9 @@ section .title::after{
     bottom: -8px;
     left: 50%;
     font-size: 20px;
-    color: maroon;
+    color: var(--primary-color);
     padding: 0 5px;
-    background: #fff;
+    background: var(--simple-light);
     transform: translateX(-50%);
 }
 /* navbar styling */
@@ -106,7 +117,7 @@ section .title::after{
 
 .navbar.sticky{
     padding: 15px 0;
-    background: maroon;
+    background: var(--primary-color);
 }
 .navbar .max-width{
     display: flex;
@@ -114,16 +125,16 @@ section .title::after{
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: #fff;
+    color: var(--simple-light);
     font-size: 35px;
     font-weight: 600;
 }
 .navbar .logo a span{
-    color: maroon;
+    color: rgb(13, 82, 155);
     transition: all 0.3s ease;
 }
 .navbar.sticky .logo a span{
-    color: #fff;
+    color: var(--simple-light);
 }
 .navbar .menu li{
     list-style: none;
@@ -131,7 +142,7 @@ section .title::after{
 }
 .navbar .menu li a{
     display: block;
-    color: #fff;
+    color: var(--simple-light);
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -140,14 +151,14 @@ section .title::after{
   z-index: 9999;
 }
 .navbar .menu li a:hover{
-    color: maroon;
+    color: var(--primary-color);
 }
 .navbar.sticky .menu li a:hover{
-    color: #fff;
+    color: var(--simple-light);
 }
 /* menu btn styling */
 .menu-btn{
-    color: #fff;
+    color: var(--simple-light);
     font-size: 23px;
     cursor: pointer;
     display: none;
@@ -157,12 +168,12 @@ section .title::after{
     position: fixed;
     height: 45px;
     width: 42px;
-    background: maroon;
+    background: var(--primary-color);
     right: 30px;
     bottom: 10px;
     text-align: center;
     line-height: 45px;
-    color: #fff;
+    color: var(--simple-light);
     z-index: 9999;
     font-size: 30px;
     border-radius: 6px;
@@ -185,7 +196,7 @@ section .title::after{
     display: flex;
     background: url("images/banner.png") no-repeat center;
     height: 100vh;
-    color: #fff;
+    color: var(--simple-light);
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
@@ -211,23 +222,23 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: maroon;
+    color: var(--primary-color);
     font-weight: 500;
 }
 .home .home-content a{
     display: inline-block;
-    background: maroon;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--simple-light);
     font-size: 25px;
     padding: 12px 36px;
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid maroon;
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 .home .home-content a:hover{
-    color:maroon;
+    color:var(--primary-color);
     background: none;
 }
 /* about section styling */
@@ -252,47 +263,47 @@ section .title::after{
     margin-bottom: 10px;
 }
 .about .about-content .right .text span{
-    color: maroon;
+    color: var(--primary-color);
 }
 .about .about-content .right p{
     text-align: justify;
 }
 .about .about-content .right a{
     display: inline-block;
-    background: maroon;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--simple-light);
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid maroon;
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 .about .about-content .right a:hover{
-    color: maroon;
+    color: var(--primary-color);
     background: none;
 }
 /* services section styling */
 .services, .projects{
-    color:#fff;
-    background: #111;
+    color:var(--simple-light);
+    background: var(--simple-dark);
 }
 .services .title::before,
 .projects .title::before{
-    background: #fff;
+    background: var(--simple-light);
 }
 .services .title::after{
-    background: #111;
+    background: var(--simple-dark);
     content: "what i do";    
 }
 .projects .title::after{
-    background: #111;
+    background: var(--simple-dark);
     content: "what i did";
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
-    background: #222;
+    background: var(--simple-dark);
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
@@ -300,7 +311,7 @@ section .title::after{
     transition: all 0.3s ease;
 }
 .services .serv-content .card:hover{
-    background: maroon;
+    background: var(--primary-color);
 }
 .services .serv-content .card .box{
     transition: all 0.3s ease;
@@ -310,11 +321,11 @@ section .title::after{
 }
 .services .serv-content .card i{
     font-size: 50px;
-    color: maroon;
+    color: var(--primary-color);
     transition: color 0.3s ease;
 }
 .services .serv-content .card:hover i{
-    color: #fff;
+    color: var(--simple-light);
 }
 .services .serv-content .card .text{
     font-size: 25px;
@@ -338,18 +349,18 @@ section .title::after{
 }
 .skills .skills-content .left a{
     display: inline-block;
-    background: maroon;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--simple-light);
     font-size: 18px;
     font-weight: 500;
     padding: 8px 16px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid maroon;
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 .skills .skills-content .left a:hover{
-    color: maroon;
+    color: var(--primary-color);
     background: none;
 }
 .skills .skills-content .right .bars{
@@ -377,7 +388,7 @@ section .title::after{
     height: 100%;
     left: 0;
     top: 0;
-    background: maroon;
+    background: var(--primary-color);
 }
 .skills-content .right .html::before{
     width: 65%;
@@ -399,7 +410,7 @@ section .title::after{
     content: "what i built";
 }
 .projects .carousel .card{
-    background: #222;
+    background: var(--simple-dark);
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
@@ -407,7 +418,7 @@ section .title::after{
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover{
-    background: maroon;
+    background: var(--primary-color);
 }
 .projects .carousel .card .box{
     display: flex;
@@ -429,11 +440,11 @@ section .title::after{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid maroon;
+    border: 5px solid var(--primary-color);
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover img{
-    border-color: #fff;
+    border-color: var(--simple-light);
 }
 .owl-dots{
     text-align: center;
@@ -445,7 +456,7 @@ section .title::after{
     margin: 0 5px;
     outline: none!important;
     border-radius: 50%;
-    border: 2px solid maroon!important;
+    border: 2px solid var(--primary-color)!important;
     transition: all 0.3s ease;
 }
 .owl-dot.active{
@@ -454,7 +465,7 @@ section .title::after{
 }
 .owl-dot.active,
 .owl-dot:hover{
-    background: maroon!important;
+    background: var(--primary-color)!important;
 }
 /* contact section styling */
 .contact .title::after{
@@ -484,7 +495,7 @@ section .title::after{
 }
 .contact .contact-content .row i{
     font-size: 25px;
-    color: maroon;
+    color: var(--primary-color);
 }
 .contact .contact-content .info .head{
     font-weight: 500;
@@ -536,7 +547,7 @@ section .title::after{
 }
 .right form .button-area button{
   z-index: 9999;
-  color: #fff;
+  color: var(--simple-light);
   display: block;
   width: 160px!important;
   height: 45px;
@@ -546,14 +557,14 @@ section .title::after{
   border-radius: 6px;
   cursor: pointer;
   flex-wrap: nowrap;
-  background: maroon;
-  border: 2px solid maroon;
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .play-snake-game-btn{
     z-index: 9999;
-    color: #fff;
+    color: var(--simple-light);
     display: block;
     width: 160px!important;
     height: 45px;
@@ -563,24 +574,24 @@ section .title::after{
     border-radius: 6px;
     cursor: pointer;
     flex-wrap: nowrap;
-    background: maroon;
-    border: 2px solid maroon;
+    background: var(--primary-color);
+    border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
   }
 
 .right form .button-area button:hover{
-  color: maroon;
+  color: var(--primary-color);
   background: none;
 }
 /* footer section styling */
 footer{
-    background: #111;
+    background: var(--simple-dark);
     padding: 15px 23px;
-    color: #fff;
+    color: var(--simple-light);
     text-align: center;
 }
 footer span a{
-    color: maroon;
+    color: var(--primary-color);
     text-decoration: none;
 }
 footer span a:hover{
@@ -625,7 +636,7 @@ footer span a:hover{
         width: 100%;
         left: -100%;
         top: 0;
-        background: #111;
+        background: var(--simple-dark);
         text-align: center;
         padding-top: 80px;
         transition: all 0.3s ease;
@@ -725,7 +736,7 @@ footer span a:hover{
         display: flex;
         background: url("images/bannertall.png") no-repeat center;
         height: 100vh;
-        color: #fff;
+        color: var(--simple-light);
         min-height: 500px;
         background-size: cover;
         background-attachment: fixed;
