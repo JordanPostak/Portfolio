@@ -22,13 +22,14 @@
         <nav class="navbar">
             <div class="max-width">
                 <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
-                <button class="play-snake-game-btn">Play Snake Game</button>
+                <!-- <button class="play-snake-game-btn">Play Snake Game</button> -->
                 <ul class="menu">
                     <li><a href="#home" class="menu-btn">Home</a></li>
+                    <li><a href="#achievements" class="menu-btn">Achievements</a></li>
                     <li><a href="#about" class="menu-btn">About</a></li>
-                    <li><a href="#services" class="menu-btn">Services</a></li>
                     <li><a href="#skills" class="menu-btn">Skills</a></li>
                     <li><a href="#projects" class="menu-btn">Projects</a></li>
+                    <li><a href="#services" class="menu-btn">Services</a></li>
                     <li><a href="#contact" class="menu-btn">Contact</a></li>
                 </ul>
                 <div class="menu-btn">
@@ -37,7 +38,7 @@
             </div>
         </nav>
         <!-- home section start -->
-        <canvas width=400 height=400 id=myCanvas></canvas>
+        <!-- <canvas width=400 height=400 id=myCanvas></canvas>
         <div class="snake-game-panel">
             <div class="game-feild">
                 <h2 class="score">Score: <span id="score">0</span></h2>
@@ -46,10 +47,11 @@
             <div class="high-score-feild">
                 <h2 class="high-score">High Score: <span id="high-score">0</span></h2>
             </div>
-        </div>
+        </div> -->
+    <main>
         <section class="home" id="home">
             <div class="max-width">
-                <div class="home-content">
+                <div class="home-content smooth">
                     <div class="text-1">Hi, my name is</div>
                     <div class="text-2">Jordan Postak</div>
                     <div class="text-3">I am a <span class="typing"></span></div>
@@ -57,8 +59,45 @@
                 </div>
             </div>
         </section>
+        
+         <!-- achievements section start -->
+         <section class="achievements smooth" id="achievements">
+            <div class="max-width">
+                <h2 class="title">My achievements</h2>
+                <div class="achiev-content">
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="text">Associate's Degree</div>
+                            <p>Associate's of Applied Technology</p>
+                            <p>Awarded by BYU-Idaho</p>
+                            <p>May 2024</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-award"></i>
+                            <div class="text">Certification</div>
+                            <p>Web and Computer Programming</p>
+                            <p>Awarded by BYU-Idaho</p>
+                            <p>May 2023</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-award"></i>
+                            <div class="text">Certification</div>
+                            <p>Web Development</p>
+                            <p>Awarded by BYU-Idaho</p>
+                            <p>May 2024</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
         <!-- about section start -->
-        <section class="about" id="about">
+        <section class="about smooth" id="about">
             <div class="max-width">
                 <h2 class="title">About me</h2>
                 <div class="about-content">
@@ -72,7 +111,7 @@
 
                         <p>From BYU-Idaho, I hold an Associate's degree in Applied Technology and a certification in Web & Computer Programming as well as a certification in Web Development.</p> 
                         <br>
-                        
+
                         <p>Currently, I am pursuing a Bachelor's in Applied Technology at BYU-Idaho, with graduation expected in 2025, and an additional certification in Databases on the horizon.</p>
                         <br>
                             
@@ -82,88 +121,169 @@
                 </div>
             </div>
         </section>
-        <!-- services section start -->
-        <section class="services" id="services">
-            <div class="max-width">
-                <h2 class="title">My services</h2>
-                <div class="serv-content">
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-paint-brush"></i>
-                            <div class="text">Web Design</div>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-chart-line"></i>
-                            <div class="text">Programing</div>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="box">
-                            <i class="fas fa-code"></i>
-                            <div class="text">Apps Design</div>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quo illo enim.</p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
         <!-- skills section start -->
-        <section class="skills" id="skills">
+        <section class="skills smooth" id="skills">
             <div class="max-width">
                 <h2 class="title">My skills</h2>
                 <div class="skills-content">
                     <div class="column left">
                         <div class="text">My creative skills & experiences.</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ratione error est recusandae consequatur, iusto illum deleniti quidem impedit, quos quaerat quis minima sequi. Cupiditate recusandae laudantium esse, harum animi aspernatur quisquam et delectus ipsum quam alias quaerat? Quasi hic quidem illum. Ad delectus natus aut hic explicabo minus quod.</p>
+                        <p>I bring a comprehensive skill set to web development, blending a strong foundation in programming with specialized expertise in frontend and backend technologies. Proficient in crafting visually appealing and functional web experiences, I leverage tools like VScode to bring projects to life. My proficiency in HTML, CSS, and JavaScript enables me to design responsive and accessible websites, ensuring usability and cross-device compatibility. Additionally, I excel in backend development using PHP, Apache, xampp, and MySQL, adept at handling CRUD operations and designing RESTful APIs. Courses like Web Fundamentals and Web Frontend Development have equipped me with the skills to implement complex JavaScript functionality, manage data with IndexedDB, and optimize websites for performance. Furthermore, I am adept at utilizing frameworks and libraries like React, Next.js, and Node.js to build dynamic and scalable web applications, coupled with proficiency in TypeScript for enhanced code quality. My ability to seamlessly integrate frontend design with backend logic underscores my ability to deliver robust and user-centric web solutions.</p>
                         <a href="#">Read more</a>
                     </div>
                     <div class="column right">
+
+                        <!-- VScode -->
                         <div class="bars">
                             <div class="info">
-                                <span>Python</span>
-                                <span>70%</span>
+                                <span>VScode</span>
+                                <span>80%</span>
                             </div>
-                            <div class="line python"></div>
+                            <div class="line vscode"></div>
                         </div>
+
+                        <!-- HTML -->
                         <div class="bars">
                             <div class="info">
                                 <span>HTML</span>
-                                <span>65%</span>
+                                <span>75%</span>
                             </div>
                             <div class="line html"></div>
                         </div>
+        
+                        <!-- CSS -->
                         <div class="bars">
                             <div class="info">
                                 <span>CSS</span>
-                                <span>65%</span>
+                                <span>75%</span>
                             </div>
                             <div class="line css"></div>
                         </div>
+        
+                        <!-- JavaScript -->
                         <div class="bars">
                             <div class="info">
                                 <span>JavaScript</span>
-                                <span>20%</span>
+                                <span>50%</span>
                             </div>
                             <div class="line js"></div>
                         </div>
+
+                        <!-- Node.js -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>Node.js</span>
+                                <span>44%</span>
+                            </div>
+                            <div class="line nodejs"></div>
+                        </div>
+
+                        <!-- GitHub.js -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>GitHub.js</span>
+                                <span>44%</span>
+                            </div>
+                            <div class="line github"></div>
+                        </div>
+
+                        <!-- Git.js -->
                         <div class="bars">
                             <div class="info">
                                 <span>Git</span>
-                                <span>15%</span>
+                                <span>44%</span>
                             </div>
                             <div class="line git"></div>
                         </div>
+
+                        <!-- React -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>React</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="line react"></div>
+                        </div>
+
+                        <!-- Next.js -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>Next.js</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="line nextjs"></div>
+                        </div>
+
+                        <!-- PHP -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>PHP</span>
+                                <span>33%</span>
+                            </div>
+                            <div class="line php"></div>
+                        </div>
+        
+                                
+                        <!-- TypeScript -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>TypeScript</span>
+                                <span>27%</span>
+                            </div>
+                            <div class="line typescript"></div>
+                        </div>
+
+                        <!-- MySQL -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>MySQL</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="line mysql"></div>
+                        </div>
+        
+                        <!-- MongoDB -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>MongoDB</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="line mongodb"></div>
+                        </div>
+        
+                        <!-- IndexedDB -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>IndexedDB</span>
+                                <span>15%</span>
+                            </div>
+                            <div class="line indexeddb"></div>
+                        </div>
+
+                         <!-- Python -->
+                         <div class="bars">
+                            <div class="info">
+                                <span class="main-skill">Python</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="line python"></div>
+                        </div>
+                 
+                        <!-- C# -->
+                        <div class="bars">
+                            <div class="info">
+                                <span>C#</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="line csharp"></div>
+                        </div>
+        
                     </div>
                 </div>
             </div>
         </section>
         <!-- Projects section start -->
-        <section class="projects" id="projects">
+        <section class="projects smooth" id="projects">
             <div class="max-width">
                 <h2 class="title">My projects</h2>
                 <div class="carousel owl-carousel">
@@ -198,14 +318,44 @@
                 </div>
             </div>
         </section>
+        <!-- services section start -->
+        <section class="services smooth" id="services">
+            <div class="max-width">
+                <h2 class="title">My services</h2>
+                <div class="serv-content">
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-globe"></i>
+                            <div class="text">Full-Stack Web Development</div>
+                            <p>Provide end-to-end web development services, covering both frontend and backend development. This includes designing and implementing responsive and visually appealing user interfaces using HTML, CSS, and JavaScript, as well as building robust backend systems using PHP, Apache, xampp, and MySQL. Offer services such as creating RESTful APIs, handling CRUD operations, and optimizing website performance.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-play"></i>
+                            <div class="text">Custom Web Application Development</div>
+                            <p>Specialize in developing custom web applications tailored to clients' specific needs. Utilize frameworks and libraries like React, Next.js, and Node.js to build dynamic and scalable applications. Offer services such as developing interactive user interfaces, implementing complex functionality with JavaScript, and integrating with external APIs for enhanced functionality.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-paint-brush"></i>
+                            <div class="text">Frontend Design and Optimization</div>
+                            <p>Focus on frontend design and optimization services to enhance user experience and website performance. Offer services such as designing responsive and accessible websites, optimizing for cross-device compatibility, and implementing CSS animations and transitions for enhanced user engagement. Provide consultation on best practices for frontend development and optimization techniques to improve website performance.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
         <!-- contact section start -->
-        <section class="contact" id="contact">
+        <section class="contact smooth" id="contact">
             <div class="max-width">
                 <h2 class="title">Contact me</h2>
                 <div class="contact-content">
                     <div class="column left">
                         <div class="text">Get in Touch</div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                        <p>Ready to bring your project to life? Let's collaborate! Whether you have a question, need a quote, or simply want to discuss your ideas, I'm here to help. Feel free to reach out via email, phone, or the contact form below. I look forward to hearing from you and turning your vision into reality.</p>
                         <div class="icons">
                             <div class="row">
                                 <i class="fas fa-user"></i>
@@ -256,10 +406,12 @@
             </div>
         </section>
         <!-- footer section start -->
-        <footer>
-            <span>Created By <a href="#about">Jordan Postak</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+        <footer class="smooth">
+            <span>Created By <a href="#about">Jordan Postak</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
         </footer>
+    </main>
         <script src="script.js"></script>
-        <script src="snake.js"></script>
+        <script src="sub-skills.js"></script>
+        <!-- <script src="smooth-scrolling.js"></script> -->
     </body>
 </html>
