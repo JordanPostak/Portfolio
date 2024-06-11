@@ -3,7 +3,7 @@
 
 /* Variables*/
 :root {
-    --primary-color: #1a45b2;
+    --primary-color: #211f99;
     --secondary-color: #f1f1f1;
     --accent-color: #12c0df;
     --nuetral-color: #888;
@@ -38,7 +38,6 @@ main {
 /*  card rules */
 .card {
     position: relative;
-    z-index: 10001;
   }
 
 /* custom scroll bar */
@@ -59,10 +58,10 @@ main {
 .navbar{
     position: fixed;
     width: 100%;
-    z-index: 10002;
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
+    z-index: 999;
 }
 
 .navbar.sticky{
@@ -99,7 +98,6 @@ main {
     margin-left: 25px;
     transition: color 0.3s ease;
     position: relative;
-  z-index: 9999;
 }
 .navbar .menu li a:hover{
     color: var(--primary-color);
@@ -114,7 +112,6 @@ main {
     font-size: 23px;
     cursor: pointer;
     display: none;
-    z-index: 1;
 }
 .scroll-up-btn{
     position: fixed;
@@ -126,7 +123,7 @@ main {
     text-align: center;
     line-height: 45px;
     color: var(--simple-light);
-    z-index: 9999;
+    z-index: 999;
     font-size: 30px;
     border-radius: 6px;
     border-bottom-width: 2px;
@@ -280,7 +277,6 @@ section .title::after{
 }
 a.hire-me {
     position: relative;
-    z-index: 10001;
 }
 
 /* achievements section styling */
@@ -339,7 +335,6 @@ a.hire-me {
 }
 .about a {
     position: relative;
-    z-index: 10001;
 }
 .about .about-content .left{
     width: 45%;
@@ -396,7 +391,6 @@ a.hire-me {
 }
 .skills a {
     position: relative;
-    z-index: 10001;
   }
 .skills .skills-content .column{
     width: calc(50% - 30px);
@@ -535,9 +529,12 @@ a.hire-me {
 
 /* projects section styling */
 .projects {
-    color:var(--simple-dark);
+    color:var(--simple-light);
     background: var(--simple-light);
     min-height: 100vh;
+}
+.projects .title{
+    color: var(--simple-dark);
 }
 .projects .title::before{
     background-color: var(--simple-dark);
@@ -587,7 +584,6 @@ a.hire-me {
 /*  carousel rules */
 .carousel.owl-carousel {
     position: relative;
-    z-index: 10001;
 }
 .owl-dots{
     text-align: center;
@@ -698,14 +694,12 @@ a.hire-me {
 }
 .contact .right form .fields{
     display: flex;
-    z-index: 10001;
 }
 .contact .right form .field,
 .contact .right form .fields .field{
     height: 45px;
     width: 100%;
     margin-bottom: 15px;
-    z-index: 10001;
 }
 .contact .right form .textarea{
     height: 80px;
@@ -739,7 +733,6 @@ a.hire-me {
   align-items: center;
 }
 .right form .button-area button{
-  z-index: 9999;
   color: var(--simple-light);
   display: block;
   width: 160px;
@@ -777,15 +770,12 @@ footer span a:hover{
 
 .right form .fields{
     position: relative;
-    z-index: 100001;
 }
 .contact .right form .textarea{
     position: relative;
-    z-index: 100001;
 } 
 .contact .right form .field{
     position: relative;
-    z-index: 100001;
 }
 /* responsive media query start */
 @media (max-width: 1104px) {
@@ -793,16 +783,35 @@ footer span a:hover{
         height: 350px;
         width: 350px;
     }
+    .home{
+        display: flex;
+        background: url("images/bannertall.png") no-repeat center;
+        height: 100vh;
+        color: var(--simple-light);
+        min-height: 500px;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
     }
+    .home{
+        display: flex;
+        background: url("images/bannertall.png") no-repeat center;
+        height: 100vh;
+        color: var(--simple-light);
+        min-height: 500px;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
 @media (max-width: 947px){
     .menu-btn{
         display: block;
-        z-index: 999;
     }
     .menu-btn i.active:before{
         content: "\f00d";
@@ -857,10 +866,24 @@ footer span a:hover{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
+    .achievements .achiev-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
         margin-bottom: 35px;
+    }
+    .home{
+        display: flex;
+        background: url("images/bannertall.png") no-repeat center;
+        height: 100vh;
+        color: var(--simple-light);
+        min-height: 500px;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 @media (max-width: 690px) {
@@ -878,6 +901,19 @@ footer span a:hover{
     }
     .services .serv-content .card{
         width: 100%;
+    }
+    .achievements .achiev-content .card{
+        width: 100%;
+    }
+    .home{
+        display: flex;
+        background: url("images/bannertall.png") no-repeat center;
+        height: 100vh;
+        color: var(--simple-light);
+        min-height: 500px;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Ubuntu', sans-serif;
     }
 }
 @media (max-width: 500px) {
